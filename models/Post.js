@@ -12,13 +12,13 @@ Post.init(
             autoIncrement: true,
         },
         title: {
-            type: Datatypes.STRING
+            type: DataTypes.STRING
         },
         content: {
-            type: Datatypes.TEXT
+            type: DataTypes.TEXT
         },
         post_date: {
-            type: Datatypes.DATE
+            type: DataTypes.DATE
         },
         user_id: {
             type: DataTypes.INTEGER,
