@@ -12,13 +12,17 @@ Comment.init(
             autoIncrement: true,
         },
         comment_title: {
-            type: DataTypes.STRING
+            type: DataTypes.STRING,
+            allowNull: false
         },
         comment_content: {
-            type: DataTypes.TEXT
+            type: DataTypes.TEXT,
+            allowNull: false
         },
         comment_date: {
-            type: DataTypes.DATE
+            type: DataTypes.DATE,
+            defaultValue: DataTypes.NOW,
+            allowNull: false
         },
         user_id: {
             type: DataTypes.INTEGER,
