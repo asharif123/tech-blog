@@ -15,7 +15,7 @@ const signupFormHandler = async (event) => {
       setTimeout(() => {
         console.log(response)
         if (response.ok) {
-          document.location.replace('/search');
+            document.location.replace('/dashboard');
         } 
       
         else {
@@ -43,7 +43,7 @@ const loginFormHandler = async (event) => {
         setTimeout(() => {
           console.log(response)
           if (response.ok) {
-            document.location.replace('/search');
+            document.location.replace('/dashboard');
           } 
         
           else {

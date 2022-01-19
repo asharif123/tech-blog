@@ -9,7 +9,7 @@ try {
     }
 
     else {
-        res.render('dashboard')
+        res.render('dashboard', {loggedIn: req.session.loggedIn})
     }
 }
 

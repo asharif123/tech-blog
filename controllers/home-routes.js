@@ -3,10 +3,10 @@ const router = require('express').Router();
 //define homepage
 router.get('/', (req, res) => {
     if (req.session.loggedIn) {
-        res.redirect('/dashboard');
+        res.redirect('/dashboard', {loggedIn: req.session.loggedIn});
         return;
     }
-    res.render('login')
+    res.render('login', {loggedIn: req.session.loggedIn})
 })
 
 // defin login route
