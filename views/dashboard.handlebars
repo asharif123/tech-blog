@@ -1,5 +1,5 @@
-<div class="">
-    <form class="post-data">
+<div class="d-flex flex-column align-items-center justify-content-center">
+    <form class="col-12 post-data">
         <div class="col-12 col-xl-3 col-md-5 p-5">
             <div class="card h-100">
                 <div class="form-group">
@@ -7,38 +7,38 @@
                     <textarea class="form-control" rows="1" id="post-title"></textarea>
                 </div>      
             </div>
-            <div class="py-3 card h-100">
+            <div class="col-md-12 py-3 card h-100">
                 <div class="form-group">
                     <label for="post-content">Post:</label>
-                    <textarea class="form-control" rows="10" id="post-content"></textarea>
+                    <textarea class="form-control" rows="10" cols="50" id="post-content"></textarea>
                 </div>      
             </div>
             <button type="submit" class="btn btn-success">Post</button>
 
         </div>
     </form>
-    {{#each projects as |project| }}
-        <div class="row mb-4 project">
+    <div class="-d-flex">
+    {{#each posts as |post| }}
+        <div class="post-results col-12 col-md-12 col-xl-7 project">
             <div class="col-md-5">
-                <h2>
-                <!-- Call helper function with triple brackets to render the emoji span as HTML -->
-                {{{get_emoji}}}
-                <a href="/project/{{project.id}}">{{project.name}}</a>
-                </h2>
-                <p>
-                <span for="img" aria-label="money">💲</span>
-                <!-- Pass needed_funding value to the helper function -->
-                <span class="dollar-amount">{{format_amount project.needed_funding}}</span>
-                needed!
-                </p>
-                <p>Created by {{project.user.name}} on {{format_date project.date_created}}</p>
+                <div class="d-flex justify-content-around">
+                    <span><h3>{{post.title}}</h3></span>
+                    <p>Posted by {{post.user.name}} on {{format_date post.post_date}}</p>
+                </div>
+                <div class="col text-content">
+                    {{post.content}}
+                </div>
             </div>
-            <div class="col-md-7">
-                <p>
-                {{project.description}}
-                </p>
+            <div class="d-flex post-results-options justify-content-around">
+                <a class="post-update" href='/dashboard/post/update/{{post.id}}'>Update</a>
+                <a class="post-delete" href='/dashboard/post/delete/{{post.id}}'>Delete</a>
+            </div>
+            <div>
+                <a class="post-comment" href='/dashboard/comment/{{post.id}}'>Comment</a>
             </div>
         </div>
     {{/each}}
+
+    </div>
 </div>
 <script src="/js/submit-post.js"></script>

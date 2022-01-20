@@ -21,14 +21,4 @@ async function formHandler(event) {
     }
     }
 
-    document.querySelectorAll(".search-history-btn").forEach(node => node.addEventListener("click", (e)=> {
-        const searchObj = {
-            maximum_budget: e.target.dataset.maximum_budget,
-            city_name: e.target.dataset.city_name,
-            state_name: e.target.dataset.state_name,
-            minimum_budget: e.target.dataset.minimum_budget
-        }
-        formHandler(e, searchObj);
-    }))
-
 document.querySelector(".post-data").addEventListener("submit", formHandler);

@@ -15,3 +15,18 @@
     margin: 2% 0;
     max-width: 250px;
 }
+
+.post-data {
+    margin: 0 auto;
+}
+
+.post-results {
+    background-color: rgb(126, 117, 117);
+    color: rgb(221, 215, 215);
+    padding: 15%;
+    border: 1px solid white;
+}
+
+.post-delete {
+    margin-left: 5%;
+}
