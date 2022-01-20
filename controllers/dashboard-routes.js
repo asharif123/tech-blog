@@ -59,8 +59,8 @@ router.put('/post/update/:id', async (req, res) => {
 
         const postUpdate = await Post.update(
             {
-                title: req.body.title,
-                content: req.body.content,
+                title: req.body.post_title,
+                content: req.body.post_data,
                 user_id: req.session.user_id,
         
             },
@@ -79,20 +79,37 @@ router.put('/post/update/:id', async (req, res) => {
     }
 })
 
+router.get('/post/update/:id', async (req, res) => {
+    try {
+        if (!req.session.loggedIn) {
+            res.redirect('/login')
+        }
+        const postData = await Post.findByPk(req.params.id, {
+            include: [{model: User}]
+        })
+        const post = postData.get({plain: true})
+        res.render('dashboard', {loggedIn: req.session.loggedIn})
+    }
+    catch (err) {
+        console.log(err)
+        res.status(500).send(err)
+    }
+})
+
 //delete post in dashboard
 // /dashboard/post/delete/{{post.id}}
 router.delete('/post/delete/:id', async (req, res) => {
         try
     {
         const deletedPost = await Post.destroy({where:{id: req.params.id}});
-
+        console.log("**************************************** DELETED POST", deletedPost)
         if(!deletedPost)
         {
             res.status(404).json({message: 'No Post with that id found!!'});
             return;
         }
 
-        res.render('dashboard');
+        res.status(200).json(deletedPost);
 
     }catch(err)
     {
@@ -101,6 +118,40 @@ router.delete('/post/delete/:id', async (req, res) => {
     }
 
 })
+
+router.get('/post/delete/:id', async (req, res) => {
+    try {
+        if (!req.session.loggedIn) {
+            res.redirect('/login')
+        }
+    
+        else {
+            const postData = await Post.findAll({
+                include: [
+                    {
+                        model: User,
+                        attributes: ['name']
+                    }
+                ]
+            })
+                // Serialize data so the template can read it
+            const posts = postData.map((post) => post.get({ plain: true }));
+            console.log(posts)
+    
+            res.render('dashboard', {posts, loggedIn: req.session.loggedIn})
+        }
+    }
+    
+    catch(err)
+    {
+        console.log(err);
+        res.status(500).send(err);
+    }
+    
+
+})
+
+
 
 //create a comment for the post
 router.post('/comment', async (req, res) => {
