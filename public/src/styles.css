@@ -30,3 +30,19 @@
 .post-delete {
     margin-left: 5%;
 }
+
+.post-comment {
+    background-color: rgb(39, 151, 2);
+    color: white;
+    border-radius: 5px;
+    padding: 5%;
+    margin-top: 5%;
+}
+
+.post-author {
+    font-size: 60%;
+}
+
+.post-content-results {
+    font-size: 50%;
+}
