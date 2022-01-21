@@ -12,7 +12,7 @@
     </form>
         {{#each comments as |comment| }}
         <div class="post-results col-12 col-md-12 col-xl-7 project">
-            <div class="col-md-5">
+            <div class="col-md-12">
                 <div class="d-flex justify-content-around">
                     <span><h3>{{post.title}}</h3></span>
                     <p>Commented by {{comment.user.name}} on {{format_date comment.comment_date}}</p>

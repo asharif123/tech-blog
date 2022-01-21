@@ -19,7 +19,7 @@
 .dashboard, .comment-data {
     background-color: rgb(88, 88, 192);
     min-height: 100vh;
-    
+
 }
 
 .post-data {
@@ -33,7 +33,9 @@
     padding: 15%;
     border-radius: 5px;
     margin: 5% 0%;
-    margin-right: 10%;
+    margin-right: 50%;
+    word-wrap: break-word;
+    font-size: 70%;
 }
 
 .post-delete {
@@ -49,13 +51,31 @@
 }
 
 .post-author {
-    font-size: 70%;
+    font-size: 200%;
 }
 
 .post-content-results{
     font-size: 100%;
+    word-wrap: break-word;
 }
 
 .text-content {
     font-size: 150%;
+    word-wrap: break-word;
+
 }
+
+
+@media only screen and (max-width: 780px) {
+    .post-results {
+        word-wrap: break-word;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .post-author {
+        font-size: 120%;
+    }
+}
+
+  
