@@ -10,3 +10,5 @@ login and send/update/delete messages.
 
 Here the user is directed to the login/signup page. The user cannot see the post messages or comments until the user either creates a new account or logs in with an
 existing account.
+
+![alt-text](./assets/images/page-1.JPG "main-page-1")
