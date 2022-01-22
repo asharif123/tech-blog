@@ -21,7 +21,7 @@ Once the user logs in or signs up with an account, the user will be directed to 
 
 The user can also see the comments for each message by clicking on comments.
 
-(Note: When the user hits update, the user will be directed back to the textbox on the same page and the updated message will be added below the other posts.
+(Note: When the user hits update, the user will be directed back to the textbox on the same page containing the posts and the updated message will be added below the other posts.)
 
 ![alt-text](./assets/images/page-2.JPG "main-page-2")
 
