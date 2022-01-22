@@ -32,10 +32,11 @@ try {
             include: [
                 {
                     model: User,
-                    order: [ [ 'createdAt', 'DESC']]                }
+                    order: [ [ 'createdAt', 'DESC']]                
+                }
             ]
         })
-            // Serialize data so the template can read it
+            // Serialize data so the templa
         const posts = postData.map((post) => post.get({ plain: true }));
         console.log(posts)
 
