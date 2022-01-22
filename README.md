@@ -22,3 +22,9 @@ Once the user logs in or signs up with an account, the user will be directed to 
 The user can also see the comments for each message by clicking on comments.
 
 ![alt-text](./assets/images/page-2.JPG "main-page-2")
+
+# Comments
+
+When the user clicks on the 
+
+![alt-text](./assets/images/page-2.JPG "main-page-2")
