@@ -104,7 +104,6 @@ router.delete('/post/delete/:id', async (req, res) => {
         try
     {
         const deletedPost = await Post.destroy({where:{id: req.params.id}});
-        console.log("**************************************** DELETED POST", deletedPost)
         if(!deletedPost)
         {
             res.status(404).json({message: 'No Post with that id found!!'});
@@ -136,9 +135,7 @@ router.get('/post/delete/:id', async (req, res) => {
                     }
                 ]
             })
-                // Serialize data so the template can read it
             const posts = postData.map((post) => post.get({ plain: true }));
-            console.log(posts)
     
             res.render('dashboard', {posts, loggedIn: req.session.loggedIn})
         }
