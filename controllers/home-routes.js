@@ -3,7 +3,7 @@ const router = require('express').Router();
 //define homepage
 router.get('/', (req, res) => {
     if (req.session.loggedIn) {
-        res.redirect('/dashboard', {loggedIn: req.session.loggedIn});
+        res.redirect('/dashboard');
         return;
     }
     res.render('login', {loggedIn: req.session.loggedIn})
