@@ -1,3 +1,5 @@
+Link to deployed app: https://still-garden-56258.herokuapp.com/
+
 # Tech Blog
 
 Tech Blog is a program that allows user to add, update and delete messages and works just like a messaging app.
